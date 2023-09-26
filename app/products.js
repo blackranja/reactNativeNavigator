@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Navbar from '../Navbar'
-import Footer from '../Footer'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const Products = () => {
   return (
