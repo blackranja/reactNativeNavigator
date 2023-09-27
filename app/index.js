@@ -18,17 +18,15 @@ const Home = () => {
         {flex:1,backGroundColor:'#ffcccc'}
         }>
         <Stack.Screen options={{
-            headerStyle:{backgroundColor:'white'},
-            headerShadowVisible:false,
-            headerTitle:''
+            headerShown:false,
         }}
         />
        
         <ScrollView>
             <View>
-                <Navbar/>
+                
                 <Welcome/>
-                <Footer/>
+                
                 
             </View>
         </ScrollView>

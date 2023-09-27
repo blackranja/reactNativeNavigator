@@ -1,7 +1,8 @@
 import { View, Text,Image } from 'react-native'
 import React from 'react'
 import { useNavigation } from 'expo-router'
-import {COLORS,SIZES,SHADOWS,assets} from '../constants';
+import {COLORS,SIZES,SHADOWS,assets} from '../../constants';
+import { CircleButton } from '../Button';
 
 const NFTCard = ({data}) => {
     const navigation=useNavigation();
