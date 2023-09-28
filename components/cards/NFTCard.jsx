@@ -6,13 +6,13 @@ import { CircleButton, RectButton} from '../Button';
 import { SubInfo,EthPrice,ImageCap,People,EndDate, NFTTitle, } from '../SubInfo';
 
 const NFTCard = ({data}) => {
+
     const navigation=useNavigation();
-    console.log(data.title,data.subTitle,data.titleSize,data.subTitleSize)
-    const handlePress=()=>{
-        return(
-        navigation.navigate("/details",{...data})
+    console.log(data)
+    const handlePress=()=>(
+        navigation.navigate("details",{data})
         )
-    }
+    
   return (
     <View style={{
         backgroundColor:COLORS.white,
@@ -58,7 +58,7 @@ const NFTCard = ({data}) => {
                         fontSize={SIZES.font}
           //handlePress={()=>route.push("/details")}
                         handlePress={handlePress}
-                        data={data}
+                        
                         props={data}
           
           />

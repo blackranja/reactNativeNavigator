@@ -68,15 +68,14 @@ export const RectButton=({minWidth,fontSize,handlePress,data,props})=>{
             padding:SIZES.small,
             ...props,
             }}
-            onPress={()=>{
-                navigation.navigate('/details',{data})
-            }}
+            onPress={handlePress}
+            
             >
                
                 <Text style={{
                     fontFamily:FONTS.semiBold,
                     fontSize:fontSize,
-                    coor:COLORS.white,
+                    color:COLORS.white,
                     textAlign:'center'
                 }}>
                     Place a bid

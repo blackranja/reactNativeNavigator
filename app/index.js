@@ -1,11 +1,11 @@
-import { View, SafeAreaView,Text } from 'react-native'
+import { View, SafeAreaView,ScrollView,Text } from 'react-native'
 import React from 'react'
 import { Stack, useRouter } from 'expo-router'
 //import Products from './products';
 //import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //import { NavigationContainer} from '@react-navigation/native';
 //import Details from './details';
-import { ScrollView } from 'react-native-gesture-handler';
+//import { ScrollView } from 'react-native-gesture-handler';
 import Welcome from '../components/Welcome';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
