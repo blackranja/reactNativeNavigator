@@ -10,7 +10,7 @@ const NFTCard = ({data}) => {
     console.log(data.title,data.subTitle,data.titleSize,data.subTitleSize)
     const handlePress=()=>{
         return(
-        navigation.navigate("details",{data})
+        navigation.navigate("/details",{...data})
         )
     }
   return (
@@ -53,10 +53,12 @@ const NFTCard = ({data}) => {
                    }}>
                     <EthPrice price={data.price}/>
                     <RectButton 
+                        
                         minWidth={120}
                         fontSize={SIZES.font}
           //handlePress={()=>route.push("/details")}
                         handlePress={handlePress}
+                        data={data}
                         props={data}
           
           />

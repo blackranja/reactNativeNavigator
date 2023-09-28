@@ -1,9 +1,10 @@
 import {TouchableOpacity, Image, View, Text } from 'react-native'
 import React,{useState} from 'react'
 import {COLORS,SIZES,FONTS,SHADOWS} from '../constants';
-
+import { useNavigation } from 'expo-router';
 export const CircleButton = ({imgUrl,handlePress,...props}) => {
     const [toggle,setToggle]=useState(false);
+    const navigation=useNavigation()
   return (
     !toggle ? 
 
@@ -55,7 +56,7 @@ export const CircleButton = ({imgUrl,handlePress,...props}) => {
   )
 }
 
-export const RectButton=({minWidth,fontSize,handlePress,props})=>{
+export const RectButton=({minWidth,fontSize,handlePress,data,props})=>{
     return(
         <TouchableOpacity style={{
             position:'absolute',
@@ -67,7 +68,9 @@ export const RectButton=({minWidth,fontSize,handlePress,props})=>{
             padding:SIZES.small,
             ...props,
             }}
-            onPress={handlePress}
+            onPress={()=>{
+                navigation.navigate('/details',{data})
+            }}
             >
                
                 <Text style={{
