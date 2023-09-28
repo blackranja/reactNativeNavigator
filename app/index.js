@@ -34,12 +34,12 @@ const Home = () => {
         />
        
         <ScrollView>
-            <View>
+           
                 
                 <Welcome/>
                 
                 
-            </View>
+           
         </ScrollView>
     </SafeAreaView>
    

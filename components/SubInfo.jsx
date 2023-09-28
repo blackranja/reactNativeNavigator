@@ -10,7 +10,7 @@ export const NFTTitle = ({title,subTitle,titleSize,subTitlesize}) => {
   //const route=useRouter();
   //console.log(data);
   return (
-    <View>
+    <View style={{paddingTop:5}}>
       <Text style={{
         fontFamily:FONTS.regular,
         fontSize:titleSize,
@@ -86,7 +86,11 @@ export const EthPrice = ({price}) => {
   export const People = () => {
     return (
       <View style={{
-        flexDirection:'row'
+        flexDirection:'row',
+        position:'absolute',
+        top:-50,
+        left:1,
+
       }}>
         {[assets.person02,assets.person03,assets.person04].map((imgUrl,index)=>(
             <ImageCap imgUrl={imgUrl} index={index} key={`People-${index}`}/>
@@ -98,6 +102,9 @@ export const EthPrice = ({price}) => {
   export const EndDate = () => {
     return (
       <View style={{
+        position:'absolute',
+        top:-55,
+        right:1,
         paddingHorizontal:SIZES.font,
         paddingVertical:SIZES.base,
         backgroundColor:COLORS.white,
@@ -105,7 +112,8 @@ export const EthPrice = ({price}) => {
         alignItems:'center',
         ...SHADOWS.light,
         elevation:1,
-        maxWidth:'50%'
+        maxWidth:'50%',
+      
       }}>
         <Text style={{
             fontFamily:FONTS.regular,

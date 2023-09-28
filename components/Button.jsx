@@ -1,9 +1,11 @@
 import {TouchableOpacity, Image, View, Text } from 'react-native'
-import React from 'react'
+import React,{useState} from 'react'
 import {COLORS,SIZES,FONTS,SHADOWS} from '../constants';
 
 export const CircleButton = ({imgUrl,handlePress,...props}) => {
+    const [toggle,setToggle]=useState(false);
   return (
+    !toggle ? 
 
     <TouchableOpacity style={{
         width:40,
@@ -16,7 +18,9 @@ export const CircleButton = ({imgUrl,handlePress,...props}) => {
         ...SHADOWS.light,
         ...props,
         }}
-        onPress={handlePress}
+        onPress={()=>{
+            setToggle(!toggle);
+        }}
         >
            
             <Image source={imgUrl}
@@ -25,12 +29,38 @@ export const CircleButton = ({imgUrl,handlePress,...props}) => {
             />
             
         </TouchableOpacity>
+        :
+        <TouchableOpacity style={{
+            width:40,
+            height:40,
+            backgroundColor:"#ffcc00",
+            position:'absolute',
+            borderRadius:SIZES.extraLarge,
+            alignItems:'center',
+            justifyContent:'center',
+            ...SHADOWS.light,
+            ...props,
+            }}
+            onPress={()=>{
+                setToggle(!toggle);
+            }}
+            >
+               
+                <Image source={imgUrl}
+                resizeMode='contain'
+                style={{width:24,height:24}}
+                />
+                
+            </TouchableOpacity>
   )
 }
 
-export const RectButton=({minWidth,fontSize,handlePress})=>{
+export const RectButton=({minWidth,fontSize,handlePress,props})=>{
     return(
         <TouchableOpacity style={{
+            position:'absolute',
+            right:1,
+            bottom:3,
              backgroundColor:COLORS.primary,
             borderRadius:SIZES.extraLarge,
             minWidth:minWidth,
