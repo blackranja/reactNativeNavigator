@@ -9,12 +9,23 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Welcome from '../components/Welcome';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import {useFonts} from 'expo-font';
+import { DefaultTheme } from '@react-navigation/native';
 //const Stack=createNativeStackNavigator();
-
+const theme={...DefaultTheme,colors:{
+    ...DefaultTheme.colors,
+    backgroundColor:"transparent"
+}}
 const Home = () => {
+    const [loaded]=useFonts({
+        InterBold:require('../assets/fonts/Inter-Bold.ttf'),
+        InterSemiBold:require('../assets/fonts/Inter-SemiBold.ttf'),
+        InterMedium:require('../assets/fonts/Inter-Medium.ttf'),
+        InterRegular:require('../assets/fonts/Inter-Bold.ttf'),
+    })
     const router=useRouter();
   return (
-    <SafeAreaView style={
+    <SafeAreaView theme={theme} style={
         {flex:1,backGroundColor:'#ffcccc'}
         }>
         <Stack.Screen options={{

@@ -1,19 +1,73 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import {SIZES,FONTS,COORS,SHADOWS,assets} from '../constants';
+import {SIZES,FONTS,COLORS,SHADOWS,assets} from '../constants';
+import { useRouter } from 'expo-router';
+import { RectButton } from './Button';
+import { useNavigation } from 'expo-router';
 
-export const NFTTitle = () => {
+export const NFTTitle = ({title,subTitle,titleSize,subTitlesize}) => {
+    const navigation=useNavigation();
+  //const route=useRouter();
+  //console.log(data);
   return (
     <View>
-      <Text>ntf-title</Text>
-    </View>
+      <Text style={{
+        fontFamily:FONTS.regular,
+        fontSize:titleSize,
+        color:COLORS.primary,
+      }}>
+        {title}
+      </Text>
+      <Text style={{
+        fontFamily:FONTS.light,
+        fontSize:subTitlesize,
+        color:COLORS.primary}}>
+          by {subTitle}
+        </Text>
+      </View>
   )
 }
 
-export const EthPrice = () => {
+
+      
+    /*Export the below component...................}
+
+      <View style={{
+        marginTop:SIZES.font,
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignItems:'center',
+      }}>
+        <EthPrice price={data.price}/>
+        {/*The Rectangluar Touch Button*/
+    /*
+        <RectButton 
+          minWidth={120}
+          fontSize={SIZES.font}
+          //handlePress={()=>route.push("/details")}
+          handlePress={()=>navigation.navigate("details",{data})}
+          
+          />
+      </View>
+     
+    </View>
+  )
+}
+*/
+export const EthPrice = ({price}) => {
     return (
-      <View>
-        <Text>SubInfo</Text>
+      <View style={{flexDirection:'row', alignItem:'center'}}>
+       <Image
+       source={assets.eth}
+       resizeMode='contain'
+       style={{width:20,height:20,marginRight:2}}
+       />
+       <Text style={{
+        fontFamily:FONTS.medium,
+        fontSize:SIZES.font,
+        color:COLORS.primary,
+        }}>
+          {price}</Text>
       </View>
     )
   }
@@ -57,7 +111,16 @@ export const EthPrice = () => {
             fontFamily:FONTS.regular,
             fontSize:SIZES.small,
             color:COLORS.primary,
-        }}
+        }}>
+            Ending in
+        </Text>
+        <Text style={{
+            fontFamily:FONTS.semiBold,
+            fontSize:SIZES.medium,
+            color:COLORS.primary
+        }}>
+            12h 30m
+        </Text>
         
       </View>
     )
@@ -71,7 +134,8 @@ export const EthPrice = () => {
         flexDirection:"row",
         justifyContent:'space-between'
       }}>
-        <Text>SubInfo</Text>
+        <People/>
+        <EndDate/>
       </View>
     )
   }

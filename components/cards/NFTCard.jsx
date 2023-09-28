@@ -3,9 +3,10 @@ import React from 'react'
 import { useNavigation } from 'expo-router'
 import {COLORS,SIZES,SHADOWS,assets} from '../../constants';
 import { CircleButton } from '../Button';
-
+import { SubInfo,EthPrice,ImageCap,People,EndDate, NFTTitle, } from '../SubInfo';
 const NFTCard = ({data}) => {
     const navigation=useNavigation();
+    console.log(data.title,data.subTitle,data.titleSize,data.subTitleSize)
 
   return (
     <View style={{
@@ -27,6 +28,19 @@ const NFTCard = ({data}) => {
             }}/>
             <CircleButton imgUrl={assets.heart} right={10} top={10}/>
         </View>
+            
+            <SubInfo/>
+            <View style={{
+                width:'100%',
+                padding:SIZES.font,}}>
+                   <NFTTitle
+                   title={data.name}
+                   subTitle={data.creator}
+                   titleSize={SIZES.medium}
+                   subTitleSize={SIZES.base}
+                   />
+                </View>
+           
     </View>
     
   )
