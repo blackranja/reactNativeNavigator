@@ -1,7 +1,8 @@
 import { View, Text } from 'react-native';
 
 
-const DetailsBid = () => {
+const DetailsBid = ({bids}) => {
+  console.log(bids);
   return (
     <View>
       <Text>DetailsBid</Text>
